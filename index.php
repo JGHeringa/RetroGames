@@ -1,4 +1,5 @@
 <?php
+$titel = "Home";
 require 'includes/config.php';
 include 'includes/head.php';
 ?>
