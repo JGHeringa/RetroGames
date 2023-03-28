@@ -1,7 +1,10 @@
 <?php
+session_start();
 $titel = "Aanmelden";
 require 'includes/config.php';
 include 'includes/head.php';
+$Token = bin2hex(openssl_random_pseudo_bytes(32));
+$_SESSION['token'] = $Token;
 ?>
 
 <body>
@@ -16,6 +19,7 @@ include 'includes/head.php';
         <input type="email" id="email" name="email" placeholder="voorbeeld@voorbeeld.nl" required><br>
         <label for="wachtwoord1">Wachtwoord:</label><br>
         <input type="password" id="wachtwoord1" name="wachtwoord1" placeholder="••••••••••" required><br>
+        <input type="hidden" name="csrfToken" value="<?= $Token ?>">
         <label for="wachtwoord2">Nog maals wachtwoord:</label><br>
         <input type="password" id="wachtwoord2" name="wachtwoord2" placeholder="••••••••••"><br><br>
         <input type="submit" value="Submit">
