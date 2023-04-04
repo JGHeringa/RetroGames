@@ -5,12 +5,22 @@ require 'includes/config.php';
 include 'includes/head.php';
 $Token = bin2hex(openssl_random_pseudo_bytes(32));
 $_SESSION['token'] = $Token;
+
+if(isset($_GET['error'])){
+    echo $_GET['error'];
+}
+
+print_r($_GET);
+for($i = 0; $i < count(array_keys($_GET)); $i++){
+    echo array_keys($_GET)[$i] . "<br/>";
+    echo $_GET[array_keys($_GET)[$i]] . "<br/>";
+}
 ?>
 
 <body>
 
     <h1>Aanmeld form</h1>
-    <form action="php/newUser.php" method="post">
+    <form action="php/newUser2.php" method="post">
         <label for="Vnaam">Voornaam:</label><br>
         <input type="text" id="Vnaam" name="Vnaam" placeholder="Mees" required><br>
         <label for="Anaam">Achternaam:</label><br>

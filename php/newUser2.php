@@ -1,7 +1,7 @@
 <?php
 require '../includes/config.php';
 session_start();
-$today = date("Y-m-d");
+$today = date("Y-m-d h:i:s");
 // checking if everything is filled
 if (
     empty($_POST["Vnaam"])         ||
@@ -116,3 +116,14 @@ $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 $headers .= 'From: <noreply@4260.nl>' . "\r\n";
 mail($to, $subject, $message, $headers);
+?>
+<table>
+    <tr>
+        <td>Naam:</td>
+        <td><?= $Vnaam ?> <?= $Anaam ?></td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td><?= $email ?></td>
+    </tr>
+</table>
