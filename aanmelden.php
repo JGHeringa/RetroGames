@@ -20,7 +20,7 @@ for($i = 0; $i < count(array_keys($_GET)); $i++){
 <body>
 
     <h1>Aanmeld form</h1>
-    <form action="php/newUser2.php" method="post">
+    <form action="php/newUser.php" method="post">
         <label for="Vnaam">Voornaam:</label><br>
         <input type="text" id="Vnaam" name="Vnaam" placeholder="Mees" required><br>
         <label for="Anaam">Achternaam:</label><br>
