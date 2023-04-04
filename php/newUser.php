@@ -1,7 +1,7 @@
 <?php
 require '../includes/config.php';
 session_start();
-$today = date("Y-m-d h:i:s");
+$today = date("Y-m-d H:i:s");
 // checking if everything is filled
 if (
     empty($_POST["Vnaam"])         ||

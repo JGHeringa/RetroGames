@@ -1,6 +1,7 @@
 <?php
 require '../includes/config.php';
 session_start();
+date_default_timezone_set('Europe/Amsterdam');
 $today = date("Y-m-d H:i:s");
 $one = 1;
 // get parameters from the GET
@@ -55,3 +56,6 @@ $stmt->execute();
 $result = $stmt->get_result(); // get the mysqli result
 
 echo "<h1>U heeft uw email adres bevestig!</h1>";
+echo $date . "<br>";
+echo $newDate . "<br>";
+echo $today;
