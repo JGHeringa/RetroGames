@@ -56,6 +56,3 @@ $stmt->execute();
 $result = $stmt->get_result(); // get the mysqli result
 
 echo "<h1>U heeft uw email adres bevestig!</h1>";
-echo $date . "<br>";
-echo $newDate . "<br>";
-echo $today;
