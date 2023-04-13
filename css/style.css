@@ -1,3 +1,147 @@
+/* HTML syling */
+html, body {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(to bottom, #87CEFA, #7A97C3, #5C7FB5);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Navbar Styling */
+.navbar-container {
+  background-color: #4A72AD;
+
+}
+
+.navbar {
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+
+.search-bar input[type="text"] {
+  border: none;
+  background-color: #f1f1f1;
+  padding: 8px;
+  border-radius: 20px 0 0 20px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.search-bar button {
+  border: none;
+  background-color: #f1f1f1;
+  padding: 8px 10px;
+  border-radius: 0 20px 20px 0;
+  font-size: 16px;
+}
+
+.login-button button {
+  border: none;
+  background-color: #f1f1f1;
+  padding: 8px 10px;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+/* Card Styling */
 .card-title, .card-title h5 {
-    margin-bottom: 0;
-  }  
+  margin-bottom: 0;
+}
+
+.card-header {
+ background-color: #2E558E;
+}
+
+.white-text {
+  color: white;
+}
+
+/* styling background cards */
+.R {
+  background-color: #F15247;
+}
+
+.LB {
+  background-color: #78C9E1;
+}
+
+.A {
+  background-color: #76D8B8;
+}
+
+.PI {
+  background-color: #E37B9B;
+}
+
+.O {
+  background-color: #D7A184;
+}
+
+.G {
+  background-color: #9DD573;
+}
+
+.P {
+  background-color: #9B9BE0;
+}
+
+.B{
+  background-color: #8CBDE5;
+}
+
+/* styling button cards */
+.SR {
+  background-color: #C44138;
+}
+
+.SLB {
+  background-color: #4EB8D8;
+}
+
+.SA {
+  background-color: #38C497;
+}
+
+.SPI {
+  background-color: #DA4F79;
+}
+
+.SO {
+  background-color: #DD6C30;
+}
+
+.SG {
+  background-color: #6DD222;
+}
+
+.SP {
+  background-color: #8055DC;
+}
+
+.SB{
+  background-color: #2B92E8;
+}

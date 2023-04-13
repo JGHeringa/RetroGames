@@ -1,6 +1,6 @@
 <?php
 require "../includes/config.php";
-$sql = "SELECT `id`, `titel`, `omschrijving`, `foto` FROM `games`";
+$sql = "SELECT `id`, `titel`, `beschrijving`, `foto` FROM `games`";
 $result = $mysqli->query($sql);
 
 $games = array();
@@ -11,7 +11,7 @@ if ($result->num_rows > 0) {
         $game = array(
             "id" => $row["id"],
             "titel" => $row["titel"],
-            "omschrijving" => $row["omschrijving"],
+            "beschrijving" => $row["beschrijving"],
             "foto" => $row["foto"]
         );
         array_push($games, $game);
