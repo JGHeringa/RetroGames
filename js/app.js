@@ -1,9 +1,11 @@
-function uitlees() {
+function uitlees(category) {
   const colors = ["R", "LB", "A", "PI", "O", "G", "P", "B"];
   const Scolors = ["SR", "SLB", "SA", "SPI", "SO", "SG", "SP", "SB"];
+
   $.ajax({
     type: "GET",
     url: "./php/getGames.php",
+    data: { category: category },
     dataType: "JSON",
     success: function (games) {
       let output = "";
@@ -19,12 +21,14 @@ function uitlees() {
         if (i % 4 == 0) {
           output += '<div class="w-150"></div>';
         }
-        output += `<div class="col-sm-6 col-md-3 mb-4">
-                        <div class="card ${colorClass}">
-                          <h5 class="card-header p-3 text-white card-title mt-0">${games[i].titel}</h5>
+        output += `<div class="card-container col-sm-6 col-md-3 mb-4">
+                        <div class="card card-container ${colorClass}">
+                          <div class="card-header p-3"> 
+                            <h5 class="text-white card-title mt-0">${games[i].titel}</h5>
+                          </div>
                           <img src="${games[i].foto}" class="card-img-top rounded-0" style="object-fit: cover; max-height: 400px; min-height: 400px; max-width: 100%;">
                           <div class="card-body">
-                            <p class="card-text">${beschrijving}</p>
+                            <p class="card-text card-p">${beschrijving}</p>
                             <a href="#" class="btn ${ScolorClass} white-text rounded-0 mb-0 w-100">meer</a>
                           </div>
                         </div>
@@ -39,5 +43,17 @@ function uitlees() {
 }
 
 $(document).ready(function () {
-  uitlees();
+  uitlees("all");
+
+  $(".category-item").click(function (e) {
+    e.preventDefault();
+    $(".category-item").removeClass("active");
+    $(this).addClass("active");
+    const category = $(this).data("category");
+    uitlees(category);
+  });
+
+  setInterval(function() {
+    uitlees("all");
+  }, 60000);
 });

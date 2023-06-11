@@ -1,6 +1,14 @@
 <?php
 require "../includes/config.php";
+
+$category = $_GET['category'];
+
+// Build the SQL query based on the category filter
 $sql = "SELECT `id`, `titel`, `beschrijving`, `foto` FROM `games`";
+if ($category !== 'all') {
+  $sql .= " WHERE `category` = '$category'";
+}
+
 $result = $mysqli->query($sql);
 
 $games = array();
